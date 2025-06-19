@@ -1,3 +1,65 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b10c4261d59bd03b5ef1688e5bfe175dfb65f2298720549c308280aae94612b3
-size 1333
+name: music-lakehouse
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.6.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: confluentinc/cp-kafka:7.6.0
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+
+  spark:
+    build:
+      context: ../
+      dockerfile: docker/spark/Dockerfile
+    container_name: spark
+    ports:
+      - "7077:7077"
+      - "8081:8081"
+    depends_on:
+      - kafka
+
+  kafka-producer:
+    build:
+      context: ../
+      dockerfile: docker/kafka/Dockerfile
+    container_name: kafka-producer
+    depends_on:
+      - kafka
+
+  streamlit:
+    build:
+      context: ../
+      dockerfile: docker/streamlit/Dockerfile
+    container_name: streamlit
+    ports:
+      - "8501:8501"
+    depends_on:
+      - spark
+  minio:
+    image: minio/minio
+    container_name: minio
+    ports:
+      - "9000:9000"   # S3 API endpoint
+      - "9001:9001"   # Web UI endpoint
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+
+volumes:
+  minio_data:
