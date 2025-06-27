@@ -49,6 +49,9 @@ music-recommender-big-data-main/
 ## Instalasi dan Pengaturan
 Langkah 1: Instal Dependesnsi
 pip install -r requirements.txt
+![Screenshot 2025-06-27 134743](https://github.com/user-attachments/assets/1e877a06-2139-4c9b-939a-44c21a3a9991)
+![Screenshot 2025-06-27 134748](https://github.com/user-attachments/assets/d900e21f-da34-41e5-8112-8b588a72a192)
+
 
 Langkah 2: Jalankan UI Streamlit
 streamlit run web/app.py
