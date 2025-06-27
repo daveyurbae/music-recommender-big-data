@@ -22,7 +22,6 @@ Proyek ini adalah **Music Recommender System** yang dibangun sebagai bagian dari
 ## Struktur Proyek
 
 music-recommender-big-data-main/
-│
 ├── assets/ # Aset untuk UI (gambar, ikon, dll.)
 ├── Docker/ # Konfigurasi Docker untuk containerization
 ├── ingestion/ # Skrip untuk pengambilan data
@@ -36,7 +35,6 @@ music-recommender-big-data-main/
 ├── .gitignore # Pengaturan git ignore
 ├── README.md # Dokumentasi proyek (file ini)
 └── requirements.txt # Ketergantungan paket Python untuk proyek
-
 ## Teknologi yang Digunakan
 
 - **Streamlit**: Digunakan untuk membangun antarmuka pengguna interaktif.
