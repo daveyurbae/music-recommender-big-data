@@ -34,8 +34,7 @@ music-recommender-big-data-main/
 ├── .env # Variabel lingkungan untuk informasi sensitif
 ├── .gitignore # Pengaturan git ignore
 ├── README.md # Dokumentasi proyek (file ini)
-└── requirements.txt # Ketergantungan paket Python untuk proyek
-## Teknologi yang Digunakan
+└── requirements.txt # Ketergantungan paket Python untuk proyek## Teknologi yang Digunakan
 
 - **Streamlit**: Digunakan untuk membangun antarmuka pengguna interaktif.
 - **Kafka**: Untuk streaming data secara real-time.
