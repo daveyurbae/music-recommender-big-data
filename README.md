@@ -55,4 +55,6 @@ pip install -r requirements.txt
 
 Langkah 2: Jalankan UI Streamlit
 streamlit run web/app.py
+![Screenshot 2025-06-27 134959](https://github.com/user-attachments/assets/b8c3da06-3f53-47f9-929c-1578664463c8)
+![Screenshot 2025-06-27 135009](https://github.com/user-attachments/assets/83429430-19fa-46e7-b3eb-2bf136eab64e)
 
