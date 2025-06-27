@@ -21,20 +21,22 @@ Proyek ini adalah **Music Recommender System** yang dibangun sebagai bagian dari
 
 ## Struktur Proyek
 
+```
 music-recommender-big-data-main/
-├── assets/ # Aset untuk UI (gambar, ikon, dll.)
-├── Docker/ # Konfigurasi Docker untuk containerization
-├── ingestion/ # Skrip untuk pengambilan data
-├── minio/ # Minio untuk penyimpanan objek
-├── processing/ # Skrip pemrosesan data
-├── web/ # Aplikasi UI Streamlit
-│ ├── app.py # Aplikasi Streamlit utama untuk UI
-│ ├── requirements.txt # Daftar paket Python yang diperlukan
-│ └── utils.py # Fungsi utilitas untuk UI
-├── .env # Variabel lingkungan untuk informasi sensitif
-├── .gitignore # Pengaturan git ignore
-├── README.md # Dokumentasi proyek (file ini)
-└── requirements.txt # Ketergantungan paket Python untuk proyek## Teknologi yang Digunakan
+├── assets/                     # Aset untuk UI (gambar, ikon, dll.)
+├── Docker/                     # Konfigurasi Docker untuk containerization
+├── ingestion/                  # Skrip untuk pengambilan data
+├── minio/                      # Minio untuk penyimpanan objek
+├── processing/                 # Skrip pemrosesan data
+├── web/                        # Aplikasi UI Streamlit
+│   ├── app.py                  # Aplikasi Streamlit utama untuk UI
+│   ├── requirements.txt        # Daftar paket Python yang diperlukan
+│   └── utils.py                # Fungsi utilitas untuk UI
+├── .env                        # Variabel lingkungan untuk informasi sensitif
+├── .gitignore                  # Pengaturan git ignore
+├── README.md                   # Dokumentasi proyek (file ini)
+└── requirements.txt            # Ketergantungan paket Python untuk proyek
+```
 
 - **Streamlit**: Digunakan untuk membangun antarmuka pengguna interaktif.
 - **Kafka**: Untuk streaming data secara real-time.
